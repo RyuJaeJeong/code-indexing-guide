@@ -54,3 +54,25 @@ scip 생성, json 파일 생성
 ```cmd
 podman run -v "%cd%:/sources" sourcegraph/scip-java:latest /bin/sh -c "scip-java index-semanticdb --output /sources/index.scip /sources/target/classes/META-INF/semanticdb && ./scip print --json index.scip > index.json"
 ```
+
+## Kind 매핑 리스트
+symbol > kind 항목의 Value 의미
+| Value | Kind (Enum) | 설명 |
+| :---: | :--- | :--- |
+| **7** | `Class` | 클래스 |
+| **9** | `Constructor` | 생성자 |
+| **11** | `Enum` | 열거형 |
+| **12** | `EnumMember` | Enum 상수 |
+| **15** | `Field` | 필드 |
+| **16** | `File` | 파일 |
+| **21** | `Interface` | 인터페이스 |
+| **26** | `Method` | 메서드 |
+| **29** | `Module` | 모듈 |
+| **35** | `Package` | 패키지 |
+| **37** | `Parameter` | 매개변수 |
+| **52** | `ThisParameter` | This 참조 |
+| **58** | `TypeParameter` | 제네릭 타입 |
+| **61** | `Variable` | 지역 변수 |
+| **66** | `AbstractMethod` | 추상 메서드 |
+| **79** | `StaticField` | 정적 필드 |
+| **80** | `StaticMethod` | 정적 메서드 |
